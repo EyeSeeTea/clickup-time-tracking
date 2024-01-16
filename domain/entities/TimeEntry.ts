@@ -11,7 +11,7 @@ export interface TimeEntry {
         name: string;
         avatar: string;
     };
-    task: {
+    task?: {
         id: string;
         name: string;
     };
