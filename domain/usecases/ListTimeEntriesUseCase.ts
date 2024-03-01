@@ -15,7 +15,9 @@ export class ListTimeEntriesUseCase implements UseCase {
                 endTime: end,
                 duration,
                 user: { id: user.id, name: user.username, avatar: user.profilePicture },
-                task: task ? { id: task.id, name: task.name } : null,
+                task: task?.id
+                    ? { id: task.id, name: task?.name ?? "Task name not available" }
+                    : null,
                 project: { id: "", name: "" }, // TODO: Disabled for now
                 billable,
                 tags,
